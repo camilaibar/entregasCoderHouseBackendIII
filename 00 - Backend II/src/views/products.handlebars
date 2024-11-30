@@ -1,0 +1,51 @@
+<div class="products-container">
+    <h2>Products</h2>
+    <div class="products-list">
+        {{#each products}}
+            <div class="product-card">
+                <h3>{{this.title}}</h3>
+                <p>{{this.description}}</p>
+                <p>Price: ${{this.price}}</p>
+                <p>Stock: {{this.stock}}</p>
+                <button class="add-to-cart-btn" data-id="{{this._id}}" onclick="addToCart('{{this._id}}')">Add to
+                    Cart</button>
+            </div>
+        {{/each}}
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="nav-buttons">
+        <a href="/hbs/profile" class="nav-button">Profile</a>
+        <a href="/hbs/cart" class="nav-button">Shopping Cart</a>
+        <a href="/api/v1/user/logout" class="nav-button logout-button">Logout</a>
+    </div>
+</div>
+<script>
+    async function addToCart ( productId )
+    {
+        try
+        {
+            const response = await fetch( `/api/v1/carts/products/${productId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include' // This sends cookies with the request
+            } );
+
+            if ( response.ok )
+            {
+                alert( "Product added to cart successfully!" );
+                // Optionally, update cart UI here if you want to display the updated cart
+            } else
+            {
+                const errorMessage = await response.text();
+                alert( `Error: ${errorMessage}` );
+            }
+        } catch ( error )
+        {
+            console.error( "Error adding product to cart:", error );
+            alert( "There was an error adding the product to the cart." );
+        }
+    }
+</script>

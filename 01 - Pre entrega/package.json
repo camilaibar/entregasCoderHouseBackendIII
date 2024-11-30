@@ -1,0 +1,20 @@
+{
+  "name": "01-pre-entrega",
+  "version": "1.0.0",
+  "description": "Entrega clase 04 - Orquestación de contenedores & Seguridad",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon ./src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "commander": "^12.1.0",
+    "nodemon": "^3.1.7"
+  }
+}

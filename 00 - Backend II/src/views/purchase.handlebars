@@ -1,0 +1,24 @@
+<div class="purchase-details-container">
+    <h2>Purchase Details</h2>
+    <p><strong>Purchase ID:</strong> {{id}}</p>
+    <p><strong>Purchase Date:</strong> {{purchase_datetime}}</p>
+    <p><strong>Total Amount:</strong> ${{total}}</p>
+    <p><strong>Purchaser:</strong> {{purchaser}}</p>
+
+    <h3>Purchased Items:</h3>
+    <div class="purchase-items">
+        {{#if items.length}}
+            {{#each items}}
+                <div class="purchase-item">
+                    <h4>{{this.title}}</h4>
+                    <p>Quantity: {{this.quantity}}</p>
+                    <p>Price per Unit: ${{this.price}}</p>
+                    <p>Subtotal: ${{multiply this.price this.quantity}}</p>
+                </div>
+            {{/each}}
+        {{else}}
+            <p>No items were purchased.</p>
+        {{/if}}
+    </div>
+    <a href="/hbs/products" class="return-to-products-btn">Continue Shopping</a>
+</div>
