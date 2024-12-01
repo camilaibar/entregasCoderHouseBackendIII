@@ -2,7 +2,7 @@ Entrega clase 04 - Orquestación de contenedores & Seguridad
 
 Primera pre-entrega de tu Proyecto final
 
-Se debe entregarÑ
+Se debe entregar
 
 - Crear un router llamado mocks.router.js que funcione bajo la ruta base /api/mocks.
 

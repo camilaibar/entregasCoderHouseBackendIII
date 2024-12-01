@@ -1,5 +1,9 @@
 import express from "express";
 import { program } from "commander";
+import "dotenv/config"; // For using variables on .env file
+
+import mongoDBConnection from "./config/mongoConfig.js";
+import router from "./routes/index.js";
 
 // Pre-config
 program
@@ -9,15 +13,14 @@ program
 program.parse();
 
 // Initialization
-console.log(program.opts());
 const { p, m } = program.opts();
 const app = express();
+mongoDBConnection();
 
 // Middelwares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-console.log(process.argv);
+app.use("/api/", router);
 
 // Start app
 app.listen(p, () => {
