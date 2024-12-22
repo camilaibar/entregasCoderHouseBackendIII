@@ -4,7 +4,7 @@ const petsCollection = "pets";
 
 const petSchema = new mongoose.Schema({
   name: String,
-  type: { type: String, enum: ["Dog", "Cat"] },
+  type: { type: String, enum: ["Dog", "Cat", "Bird", "Fish"] },
   age: Number,
 });
 

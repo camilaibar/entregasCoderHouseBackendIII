@@ -18,7 +18,7 @@ class PetsService {
       let newPet = {
         id: i + 1,
         name: faker.person.firstName(),
-        species: faker.helpers.arrayElement(["Dog", "Cat", "Bird", "Fish"]),
+        type: faker.helpers.arrayElement(["Dog", "Cat", "Bird", "Fish"]),
         age: faker.number.int({ min: 1, max: 15 }),
       };
       await petManager.createPet(newPet);
@@ -27,6 +27,18 @@ class PetsService {
 
     if (response.length === 0)
       throw new InternalServerError("Error creating mock pet");
+    return response;
+  }
+
+  /**
+   * Gets pets list
+   * @param {Object} query - Filters.
+   * @returns {Array} List.
+   */
+  async getPets(query = {}) {
+    const response = await petManager.getPets(query);
+    if (response.length === 0)
+      throw new InternalServerError("Error fetching pets");
     return response;
   }
 }

@@ -34,9 +34,9 @@ class UsersService {
   }
 
   /**
-   * Obtiene la lista de usuarios.
-   * @param {Object} query - Filtros opcionales para buscar usuarios.
-   * @returns {Array} Lista de usuarios.
+   * Gets users list
+   * @param {Object} query - Filters.
+   * @returns {Array} List.
    */
   async getUsers(query = {}) {
     const response = await userManager.getUsers(query);

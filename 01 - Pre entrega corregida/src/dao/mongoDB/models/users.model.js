@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
   email: String,
   password: String,
   role: { type: String, enum: ["user", "admin"], default: "user" },
-  pets: [{ type: mongoose.Schema.Types.ObjectId, ref: "Pet" }],
+  pets: [{ type: mongoose.Schema.Types.ObjectId, ref: "pets" }],
 });
 
 const userModel = mongoose.model(usersCollection, userSchema);
