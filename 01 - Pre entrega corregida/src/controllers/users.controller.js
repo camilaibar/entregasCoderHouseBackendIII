@@ -1,4 +1,4 @@
-import customResponses from "../classes/customResponses.js";
+import customResponses from "../classes/CustomResponses.js";
 import userService from "../services/users.services.js";
 
 class UsersController {

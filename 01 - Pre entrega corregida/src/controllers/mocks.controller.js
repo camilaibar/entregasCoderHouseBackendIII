@@ -1,6 +1,6 @@
 import petsService from "../services/pets.services.js";
 import usersService from "../services/users.services.js";
-import customResponses from "../classes/customResponses.js";
+import customResponses from "../classes/CustomResponses.js";
 import { NotFoundError } from "../classes/CustomErrors.js";
 
 class MocksController {

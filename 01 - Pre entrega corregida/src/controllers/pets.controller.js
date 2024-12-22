@@ -1,5 +1,5 @@
 import petService from "../services/pets.services.js";
-import customResponses from "../classes/customResponses.js";
+import customResponses from "../classes/CustomResponses.js";
 
 class PetsController {
   async getPets(req, res, next) {
