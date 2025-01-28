@@ -1,0 +1,17 @@
+components:
+  schemas:
+    BodyRequest:
+      type: object
+      required:
+        - campo01
+        - campo02
+      properties:
+        campo01:
+          type: string
+          description: descripcion de este campo
+        campo02:
+          type: string
+          description: descripcion de este campo
+      example:
+        campo01: "HOLA, ESTO ES UNA DESCRIPCION 01"
+        campo02: "HOLA, ESTO ES UNA DESCRIPCION 02"

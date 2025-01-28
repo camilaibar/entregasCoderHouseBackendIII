@@ -1,0 +1,25 @@
+paths:
+  /news:
+    post:
+      tags:
+        - NombreDeEntidad
+      summary: Resumen de lo que hace el endpoint.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BodyRequest"
+        required: true
+      responses:
+        200:
+          description: Sucede cuando el endpoint responde correctamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RespuestaNombreEntidad"
+        500:
+          description: Sucede cuando hay error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"

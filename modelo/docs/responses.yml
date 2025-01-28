@@ -1,0 +1,44 @@
+components:
+  schemas:
+    RespuestaNombreEntidad:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID del registro
+        campo01:
+          type: string
+          description: Descripcion del campo 01
+        campo02:
+          type: string
+          description: Descripcion del campo 02
+      example:
+        id: a1234567890
+        campo01: "HOLA, ESTO ES UNA DESCRIPCION 01"
+        campo02: "HOLA, ESTO ES UNA DESCRIPCION 02"
+    RespuestaGetAllNombreEntidad:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            description: ID del registro
+          campo01:
+            type: string
+            description: Descripcion del campo 01
+          campo02:
+            type: string
+            description: Descripcion del campo 02
+        example:
+          id: b1234567890
+          campo01: "HOLA, ESTO ES UNA DESCRIPCION 01"
+          campo02: "HOLA, ESTO ES UNA DESCRIPCION 02"
+    InternalServerError:
+      type: object
+      properties:
+        msg:
+          type: string
+          description: Error interno del servidor.
+      example:
+        msg: Error interno del servidor.
