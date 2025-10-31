@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Mocks</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Simulador de Mocks</h1>
+        <p>
+          Generá usuarios y mascotas mockeadas según el README: usá
+          <code>/api/mocks/generateData</code> para insertar y verificá con
+          <code>/api/users</code> / <code>/api/pets</code>. También podés
+          probar los endpoints de mocking directo.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>Generar e insertar datos</h2>
+        <form id="generate-form" class="form-grid">
+          <label>
+            Usuarios
+            <input type="number" name="users" min="0" value="10" />
+          </label>
+          <label>
+            Mascotas
+            <input type="number" name="pets" min="0" value="5" />
+          </label>
+          <button type="submit">POST /api/mocks/generateData</button>
+        </form>
+        <pre id="generate-output" class="output" aria-live="polite"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Mocking al vuelo (sin guardar)</h2>
+        <div class="form-grid">
+          <label>
+            Cantidad
+            <input id="mock-count" type="number" min="1" value="50" />
+          </label>
+          <button type="button" data-action="pets">
+            GET /api/mocks/mockingpets
+          </button>
+          <button type="button" data-action="users">
+            GET /api/mocks/mockingusers
+          </button>
+        </div>
+        <pre id="mock-output" class="output" aria-live="polite"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Consultar lo guardado</h2>
+        <div class="actions">
+          <button type="button" data-fetch="/api/users">GET /api/users</button>
+          <button type="button" data-fetch="/api/pets">GET /api/pets</button>
+        </div>
+        <pre id="store-output" class="output" aria-live="polite"></pre>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
